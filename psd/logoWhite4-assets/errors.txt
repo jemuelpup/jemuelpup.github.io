@@ -1,0 +1,3 @@
+[11/10/2017, 6:56:50 PM] layer "+": Expected Either a default asset specification or a layer asset specification but "+" found.
+[11/10/2017, 6:56:50 PM] layer "+": Expected Either a default asset specification or a layer asset specification but "+" found.
+[11/10/2017, 6:56:50 PM] document "logoWhite4.psd": Fonts may render inconsistently and text wrapping is unsupported which can result in clipped text. Convert text to a shape to maintain fidelity.
