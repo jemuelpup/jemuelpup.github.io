@@ -120,12 +120,13 @@ $(document).ready(function(){
 	}
 	$(window).resize(function(){
 		setSliderHeight(smallestHeightElementInSlider);
-		if($(window).width()>880){
-			autoHeight($(".products .card"),3);
-		}
-		else if($(window).width()>600){
-			autoHeight($(".products .card"),2);
-		}
+		init();
+		// if($(window).width()>880){
+		// 	autoHeight($(".products .card"),3);
+		// }
+		// else if($(window).width()>600){
+		// 	autoHeight($(".products .card"),2);
+		// }
 	});
 	$(document).ready(function(){
 		$('.parallax').parallax();
