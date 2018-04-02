@@ -144,4 +144,4 @@ $(document).ready(function(){
 		});
 		return smallestHeightElement;
 	}	
-});
+}).load( function(){   $('.grid').masonry(); });
