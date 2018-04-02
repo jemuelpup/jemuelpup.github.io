@@ -10,10 +10,13 @@ $(document).ready(function(){
 	$('.header-slider').slick({
 		dots: true,
 		speed: 800,
-		autoplay: false,
+		autoplay: true,
 		autoplaySpeed: 5000
 	});
 	$('.cards').slick({
+		dots: true,
+		speed: 800,
+		autoplay: true,
 		slidesToShow: 4,
 		slidesToScroll: 4,
 		responsive: [
