@@ -26,6 +26,8 @@ $(document).ready(function(){
 		autoplaySpeed: 5000,
 		slidesToShow: 5,
 		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 2000,
 		responsive: [
 			{
 				breakpoint: 1024,
@@ -57,12 +59,14 @@ $(document).ready(function(){
 	$('.header-slider').slick({
 		dots: true,
 		speed: 800,
-		autoplay: false,
+		autoplay: true,
 		autoplaySpeed: 5000
 	});
 	$('.designers .cards').slick({
 		slidesToShow: 4,
 		slidesToScroll: 4,
+		autoplay: true,
+		autoplaySpeed: 2000,
 		responsive: [
 			{
 				breakpoint: 1270,
