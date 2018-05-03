@@ -1,5 +1,16 @@
 
-$color-Theme: #ee6e73;/*#64dd17;/**/
+$color-Theme: #64dd17;/*#64dd17;/**/
+$icon-color: #ba2d65;
+$color-Theme-light: #9cff57;
+$color-Theme-dark: #1faa00;
+$color-Theme-complement: #d50000;
+$color-Theme-complement-dark: #9b0000;
+$color-Theme-complement-light: #ff5131;
+$common-Text-Font-Large: 1.2rem;
+$common-Text-Font-Medium: 1rem;
+
+/*
+$color-Theme: #ee6e73;
 $icon-color: #1faa00;
 $color-Theme-light: #9cff57;
 $color-Theme-dark: #FF1B23;
@@ -7,31 +18,26 @@ $color-Theme-complement: #64dd17;
 $color-Theme-complement-dark: #1faa00;
 $common-Text-Font-Large: 1.2rem;
 $common-Text-Font-Medium: 1rem;
+/**/
 
 // *{
 // 	outline: 0.5px solid red;
 // }
 
-@mixin translate($x,$y){
-	-moz-transform: translateX($x) translateY($y);
-	-webkit-transform: translateX($x) translateY($y);
-	-o-transform: translateX($x) translateY($y);
-	-ms-transform: translateX($x) translateY($y);
-	transform: translateX($x) translateY($y);
+@mixin transform($x){
+	-moz-transform: $x;
+	-webkit-transform: $x;
+	-o-transform: $x;
+	-ms-transform: $x;
+	transform: $x;
 }
-@mixin translateY($y){
-	-moz-transform: translateY($y);
-	-webkit-transform: translateY($y);
-	-o-transform: translateY($y);
-	-ms-transform: translateY($y);
-	transform: translateY($y);
-}
+
 @mixin absoluteCenter($y){
 	position: absolute;
 	width: 30%;
 	top: $y;
 	left: 50%;
-	@include translate(-50%,-50%);
+	@include transform(translateX(-50%) translateY(-50%));
 }
 @mixin transitionFunction($t){
 	-webkit-transition: $t;
@@ -48,7 +54,7 @@ body{
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating),
 a{
-	color: $color-Theme-complement-dark;
+	color: $color-Theme-dark;
 	&:hover{
 		color: $color-Theme-complement;
 	}
@@ -138,29 +144,68 @@ header{
 			position: relative;
 			background-color: #000;
 			img{
-				opacity: 0.7;
+				opacity: 0.9;
 			}
 			.description{
 				display: none;
 			}
 		}
 		.slide-caption{
-			min-height: 200px;
+			height: 250px;
 			z-index: 2;
-			bottom: 10%;
+			bottom: 5%;
 			position: absolute;
 			width: 50%;
 			color: #fff;
 			text-shadow: 1px 1px 50px #000000;
-			.title{
-				font-size: 4rem;
-				text-transform: capitalize;
-				margin-bottom: 2rem;
+			@include transitionFunction(all 1s ease);
+    		.description{
+      			padding-left: 3.75rem;
+				.title{
+					font-size: 4rem;
+				    text-transform: capitalize;
+				    margin-bottom: 1rem;
+				    padding-top: 0.5rem;
+				}
+				.desc{
+					font-size: $common-Text-Font-Large;
+					line-height: 1.4;
+				}
+				&:before{
+					content: "";
+				    display: block;
+				    position: absolute;
+				    border-left: 5px solid #fff;
+				    height: 85%;
+				    top: 0;
+					left: 0.75rem;
+					@include transitionFunction(height 1s ease);
+				}
 			}
-			.desc{
-				font-size: $common-Text-Font-Large;
-				line-height: 1.4;
+			&:before{
+				content: "";
+			    background-color: #000;
+			    height: 100%;
+			    display: block;
+			    width: 150%;
+			    position: absolute;
+			    z-index: -1;
+			    opacity: 0.3;
+			    left: -34%;
+			    @include transitionFunction(left 1s ease);
 			}
+			&.hideCaptionBg{
+				&:before{
+					left: -200%;
+				}
+				.description{
+					&:before{
+					    height: 0;
+					}
+				}
+			}
+
+			
 		}
 		.slick-dotted.slick-slider{
 			margin-bottom: 0;
@@ -183,7 +228,6 @@ header{
 			&:before {
 				@extend %pseudo-block;
 				background:transparent url("/images/next.png") right/cover no-repeat;
-
 			}
 		}
 		.slick-dots {
@@ -203,10 +247,12 @@ header{
 	}
 }
 nav{
+	background-color: $color-Theme;
 	ul li a{
 		text-transform: uppercase;
+		color: #000;
 		&:hover{
-			color: #fff;
+			color: #000;
 		}
 	}
 }
@@ -233,7 +279,7 @@ aside{
 		&.icon{
 			i{
 				font-size: 4rem;
-				color: $color-Theme-complement-dark;
+				color: $color-Theme-dark;
 			}
 		}
 	}
@@ -247,7 +293,7 @@ aside{
 		margin: 2rem;
 		padding: 0 0 2rem;
 		overflow: hidden;
-		border-top: 4px solid $color-Theme-complement-dark;
+		border-top: 4px solid $color-Theme-dark;
 		.card-image{
 			min-height: 120px;
 			padding-top: 8.25rem;
@@ -260,8 +306,8 @@ aside{
 				margin: 0 auto;
 				border: 4px solid #fff;
 				position: absolute;
-				top: 100%;
-				@include translateY(-50%);
+				top: 0;
+				@include transform(translateY(50%));
 
 			}	
 		}
@@ -308,7 +354,7 @@ aside{
 }
 .grid-item {
 	float: left;
-	background: #D26;
+	background: #fff;
 	border: 1px solid #fff;
 	overflow: hidden;
 }
@@ -323,6 +369,22 @@ $slider-dot-size: 5px;
 }
 .showInPC{
 	display:block!important;
+}
+
+.client-slider{
+	.slick-slide{
+		overflow: hidden;
+		img{
+			padding: 10px 20px;
+			margin-top: 50%;
+			width: 100%;
+
+			@include transform(translateY(-50%));
+		}
+	}
+	.slick-dots{
+		display: none;
+	}
 }
 
 main{
@@ -344,11 +406,11 @@ main{
 		text-align: center;
 		font-size: 3.5rem;
 		margin: 0 0 3.68rem 0;
-		color: $color-Theme;
+		color: $color-Theme-dark;
 		&:after {
 			content: "";
 			display: block;
-			border-bottom: 2px solid $color-Theme-dark;
+			border-bottom: 2px solid $color-Theme;
 			width: 65px;
 			padding-top: 20px;
 			margin: 0 auto;
@@ -360,8 +422,8 @@ main{
 }
 
 footer{
-	color: #fff;
 	background-color: #282828;
+	color: #fff;
 	.footer-info-block{
 		padding: 24px 0 14px;
 		h3{
@@ -390,7 +452,8 @@ footer{
 		}
 	}
 	.copyRight{
-		background-color: #000;
+		background-color: #115d00;
+    	color: #bdbdbd;
 		overflow: hidden;
 		padding: 22px 0px 5px;
 	}
@@ -399,10 +462,28 @@ footer{
 @media screen and (max-width: 1020px) {
 	header .full-screen-slider-block .slide-caption{
 		bottom: 3%;
-		width: 60%;
+		width: 55%;
 	}
 	.parallax-container .parralax-text .text-container{
 		width: 88%;
+	}
+	header .full-screen-slider-block .slide-caption{
+		height: 25%;
+		.description{
+			padding-left: 2rem;
+			.title{
+				font-size: 2rem;
+				margin-bottom: 0;
+			}
+			.desc {
+    			font-size: 1rem;
+    		}
+    		&:before{
+    			border-left: 3px solid #fff;
+    			height: 75%;
+				width: 140%;
+    		}
+		}
 	}
 }
 
@@ -415,6 +496,9 @@ footer{
 		.title{
 			font-size: 3rem;
 			margin-bottom: 1rem;
+		}
+		&:before{
+			width: 135%;
 		}
 	}
 	.row .col.m4-custom{
@@ -478,18 +562,19 @@ footer{
 		.full-screen-slider-block{
 			.slide-caption{
 				min-height: 0;
-				bottom: 16px;
+				bottom: 0;
+				height: 33%;
 				.row{
 					margin-bottom: 0;
 				}
-				.title{
-					font-size: 1.5rem;
-					margin-bottom: 0;
+				.description{
+					.title{
+						font-size: 1.5rem;
+						margin-bottom: 0;
+					}
 				}
 			}
-			.desc{
-				display: none;
-			}
+			
 
 			.slick-prev,.slick-next{
 				width: 13px;
@@ -531,7 +616,7 @@ footer{
 		z-index: 24;
 	 		height: 100vh;
 	 		width: 80%;
-	 		background-color:$color-Theme;
+	 		background-color:#fff;
 	 		-webkit-box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
 		box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
 		@include transitionFunction(right 500ms ease);
@@ -545,20 +630,22 @@ footer{
 				overflow: hidden;
 				position: relative;
 				padding: 0 16px;
+				background-color: $color-Theme;
 				@include removeFromContainer();
 				h1{
 					margin: 0;
 					text-align: center;
-					color: $color-Theme;
+					color: #000;
 					text-align: left;
 					font-size: 1.5rem;
 					margin-top: 9px;
 					padding-left: 0;
 					width: auto;
 					box-shadow: none!important;
+					background-color: $color-Theme;
 				}
 				.close{
-					color: $color-Theme;
+					color: #000;
 				}
 			}
 			.menu-links{
@@ -568,9 +655,9 @@ footer{
 			ul{
 				li{
 					width: 100%;
-					background-color:	$color-Theme;
+					background-color: #fff;
 					float: none;
-					border-bottom: 1px solid #97292e;
+					border-bottom: 1px solid $color-Theme-dark;
 				}
 			}
 		}
@@ -655,6 +742,20 @@ footer{
 	.row .col.s12 {
 		width: 100%;
 	}
+	header .full-screen-slider-block .slide-caption{
+		height: 3rem;
+		.description{
+			.title{
+				padding-top: 0.25rem;
+			}
+			.desc{
+		    	display: none!important;
+		    }
+		    &:before{
+				border-left: 2px solid #fff;
+		    }
+		}
+	}
 }
 @media screen and (max-width: 500px){
 	.slide-caption .description .desc{
@@ -681,6 +782,9 @@ footer{
 		&.design01 .card-image{
 			min-height: 0;
 			padding-top: 6.5rem;
+			img{
+				@include transform(translateY(25%));
+			}
 		}
 	}
 }
