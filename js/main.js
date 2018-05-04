@@ -4,21 +4,23 @@ $(document).ready(function(){
 	var sliderSmallestSizeX = 0;
 	var sliderSmallestSizeY = 0;
 	var containerHeight = 0;
-	init();
-
+	var colWidth = ($('.grid').width()/6)-(6*4);
+	var $grid = $('.grid').masonry({
+		itemSelector: '.grid-item',
+		columnWidth: '.grid-sizer',
+		percentPosition: true
+	});
 	function coverImg(imgContainer){
 		var containerWidth = $(imgContainer).width();
 		var containerHeight = $(imgContainer).height();
 		console.log("pumasok sa cover imageSrc");
 		console.log(containerWidth);
 		$(imgContainer).css("height",containerWidth);
-		
 	}
 	$('.client-slider').on('init', function(event, slick){
 		console.log("wahahaha")
 	    coverImg('.client-slider .slick-slide');
 	});
-	
 	$('.client-slider').slick({
 		dots: true,
 		speed: 800,
@@ -55,7 +57,6 @@ $(document).ready(function(){
 			}
 		]
 	});
-
 	$('.header-slider').slick({
 		dots: true,
 		speed: 800,
@@ -94,31 +95,17 @@ $(document).ready(function(){
 			}
 		]
 	});
-
 	$(".menu").click(function(){
 		$('body>aside').addClass("active");	
 	});
 	$(".close").click(function(){
 		$('body>aside').removeClass("active");	
 	});
-	
-
-	var colWidth = ($('.grid').width()/6)-(6*4);
-	console.log(colWidth," ito yung width")
-	var $grid = $('.grid').masonry({
-		itemSelector: '.grid-item',
-		columnWidth: '.grid-sizer',
-		percentPosition: true
-	});
-	$grid.imagesLoaded().progress( function() {
-	  $grid.masonry('layout');
-	});
 	$('.header-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
 		$(".slide-caption .description .title").fadeOut( 250 );
 		$(".slide-caption .description .desc").fadeOut( 250 );
 		$(".slide-caption").addClass("hideCaptionBg");
 	});
-
 	$('.header-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
 	 setSliderTitleAndDesc();
 	 $(".slide-caption").removeClass("hideCaptionBg");
@@ -130,8 +117,6 @@ $(document).ready(function(){
 		$(".slide-caption .description .title").text(title).fadeIn( 250 );
 		$(".slide-caption .description .desc").text(desc).fadeIn( 250 );
 	}
-
-
 	function init(){
 		smallestHeightElementInSlider = getSmallestHeightInImgArray($('.header-slider li img'));
 		sliderSmallestSizeX = $(smallestHeightElementInSlider.naturalWidth)[0];
@@ -189,11 +174,8 @@ $(document).ready(function(){
 		// 	autoHeight($(".products .card"),2);
 		// }
 	});
-
 	// parallax initialization
 	$('.parallax').parallax();
-
-
 	// this returns the element
 	function getSmallestHeightInImgArray(a){
 		// console.log(a);
@@ -246,4 +228,10 @@ $(document).ready(function(){
 				callback(false);  /* Not dark. */
 		}
 	}
+
+	$('.header-slider').height($(window).height()-64);
+	init();
+	$grid.imagesLoaded().progress( function() {
+	  $grid.masonry('layout');
+	});
 });
