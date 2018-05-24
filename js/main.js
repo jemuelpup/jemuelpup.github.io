@@ -1,5 +1,8 @@
-$(document).ready(function(){
-	
+
+//$(document).ready(function(){
+
+$(window).load(function() {
+	$('.preloader').hide();	
 	var smallestHeightElementInSlider = 0;
 	var sliderSmallestSizeX = 0;
 	var sliderSmallestSizeY = 0;
@@ -10,6 +13,17 @@ $(document).ready(function(){
 		columnWidth: '.grid-sizer',
 		percentPosition: true
 	});
+	var	windowWidth = $(window).width();
+
+
+	setInterval(function(){
+		if(windowWidth != $(window).width()){
+			initializeHeaderSlider();
+			windowWidth = $(window).width();
+			console.log("pumasok sa interval");
+		}
+	}, 1500);
+
 	function coverImg(imgContainer){
 		var containerWidth = $(imgContainer).width();
 		var containerHeight = $(imgContainer).height();
@@ -117,17 +131,19 @@ $(document).ready(function(){
 		$(".slide-caption .description .title").text(title).fadeIn( 250 );
 		$(".slide-caption .description .desc").text(desc).fadeIn( 250 );
 	}
-	function init(){
+
+	function initializeHeaderSlider(){
 		smallestHeightElementInSlider = getSmallestHeightInImgArray($('.header-slider li img'));
 		sliderSmallestSizeX = $(smallestHeightElementInSlider.naturalWidth)[0];
 		sliderSmallestSizeY = $(smallestHeightElementInSlider.naturalHeight)[0];
-		// slider initialization
 		setSliderHeight(smallestHeightElementInSlider);
 		var title = $(".header-slider li:first-child .description .title").text();
 		var desc = $(".header-slider li:first-child .description .desc").text();
 		$(".slide-caption .description .title").text(title).fadeIn( 250 );
 		$(".slide-caption .description .desc").text(desc).fadeIn( 250 );
-		
+	}
+	function init(){
+		initializeHeaderSlider();
 		// card text initialization
 		if($(window).width()>880){
 			autoHeight($(".products .card"),3);
@@ -178,6 +194,7 @@ $(document).ready(function(){
 	$('.parallax').parallax();
 	// this returns the element
 	function getSmallestHeightInImgArray(a){
+		a.css("height","auto");
 		// console.log(a);
 		var smallestHeightElement = null;
 		var smallestHeight = Infinity;

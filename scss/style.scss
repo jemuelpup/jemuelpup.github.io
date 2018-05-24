@@ -149,6 +149,7 @@ header{
 			.description{
 				display: none;
 			}
+			@include transitionFunction(height 1s ease);
 		}
 		.slide-caption{
 			height: 250px;

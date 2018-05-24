@@ -82,7 +82,12 @@ header {
     overflow: hidden; }
   header .full-screen-slider-block .header-slider li {
     position: relative;
-    background-color: #000; }
+    background-color: #000;
+    -webkit-transition: height 1s ease;
+    -moz-transition: height 1s ease;
+    -ms-transition: height 1s ease;
+    -o-transition: height 1s ease;
+    transition: height 1s ease; }
     header .full-screen-slider-block .header-slider li img {
       opacity: 0.9; }
     header .full-screen-slider-block .header-slider li .description {
