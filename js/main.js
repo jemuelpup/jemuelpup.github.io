@@ -1,7 +1,7 @@
 
-//$(document).ready(function(){
+$(document).ready(function(){
 
-$(window).load(function() {
+// $(window).load(function() {
 	$('.preloader').hide();	
 	var smallestHeightElementInSlider = 0;
 	var sliderSmallestSizeX = 0;
