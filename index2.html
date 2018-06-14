@@ -40,29 +40,43 @@
 	<div id="map"></div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script>
-		var lat = 0;
-		var lng = 0;
-		var map;
-		if (navigator.geolocation) {
-			var url = "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCDBxrvAOf3lEpgr31Q1QXgTk70HAcVyU8";
-			$.post(url, function(res) {
-				lat = res.location.lat;
-				lng = res.location.lng;
-				locate(lat,lng);
-			});
-		} else {
-			alert("geolocation not supported");
-		}
-		function locate(lat,lng){
-			map = new google.maps.Map(document.getElementById('map'), {
-				center: { lat: lat, lng: lng },
-				zoom: 10
-			});
-			var marker = new google.maps.Marker({position: {lat: lat, lng: lng}, map: map});
-		}
-		function initMap() { } // default function of google maps
+		
+	var map, infoWindow;
+    function success(){
+    	var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        var myOptions = {
+            zoom: 15,
+            center: latlng,
+            mapTypeControl: false,
+            navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL },
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            title: "You are here! Position Accuracy :" + position.coords.accuracy
+        });
+    }
+    function error(){
+    	alert("Something wrong")
+    }
+
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success, error);
+    } else {
+        error('not supported');
+    }
 	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvEf1waSEntO3T58kt17Nifd_xpXd-a2I&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvEf1waSEntO3T58kt17Nifd_xpXd-a2I" async defer></script>
 </body>
 
 </html>
+
+
+
+navigator.geolocation.getCurrentPosition(function(position) {
+  console.log(position.coords.latitude, position.coords.longitude);
+});
