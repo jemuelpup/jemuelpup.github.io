@@ -81,7 +81,7 @@ $(document).ready(function(){
 		slidesToShow: 4,
 		slidesToScroll: 4,
 		autoplay: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 4000,
 		responsive: [
 			{
 				breakpoint: 1270,
@@ -250,5 +250,8 @@ $(document).ready(function(){
 	init();
 	$grid.imagesLoaded().progress( function() {
 	  $grid.masonry('layout');
+	});
+	$('html').imagesLoaded().done( function( instance ) {
+		init();
 	});
 });
