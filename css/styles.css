@@ -1,0 +1,221 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+.header{
+  width: 100%;
+  position: absolute;
+  top: 32px;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+.logo{
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: -3.5px;
+}
+.banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../images/banner.jpg');
+  padding-top: 19.2%;
+  padding-bottom: 23%;
+  background-position: center top;
+  background-size: cover;
+  margin-bottom: 4px;
+  text-align: center;
+}
+*{
+  box-sizing: border-box;
+}
+p,
+.banner-desc{
+  font-size: 33px;
+  letter-spacing: 0.5px;
+  margin-bottom: 59px;
+  line-height: 1.4;
+}
+.description-container{
+  padding-top: 30px;
+}
+.description-container .section-title{
+  padding-top: 63px;
+  margin-bottom: 38px;
+}
+.description-container.centered-text .section-title{
+  position: relative;
+}
+.description-container.centered-text .section-title:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 200px;
+  left: 0;
+  right: 0;
+  border-top: 8px solid #aead98;
+  margin: 0 auto;
+}
+.wrap-inner{
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+h2,
+.banner-title{
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 70px;
+  margin-bottom: 11px;
+}
+.button-primary{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 35px;
+  background-color: #000;
+  text-decoration: none;
+  padding: 17px 15px;
+  max-width: 352px;
+  margin: 0 auto;
+}
+img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.logo span{
+  display: block;
+}
+.top-text{
+  font-size: 41px;
+  margin-right: 10px;
+  line-height: 0.8;
+}
+.features-list{
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.features-list li{
+  padding-top: 20%;
+  padding-bottom: 5%;
+  font-size: 20px;
+  width: calc(33.333% - 3px);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.features-list li p{
+  font-size: 48px;
+  text-align: center;
+  color: #fff;
+  max-width: 382px;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  margin: 0 auto;
+}
+.features-list li:nth-child(1){
+  background-image: url('../images/feature-background-image-01.jpg');
+}
+.features-list li:nth-child(2){
+  background-image: url('../images/feature-background-image-02.jpg');
+}
+.features-list li:nth-child(3){
+  background-image: url('../images/feature-background-image-03.jpg');
+}
+.container-half{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.section-container.container-half .image-container{
+  padding-right: 1%;
+}
+.section-container.container-half .description-container{
+  padding-top: 8.5%;
+}
+.section-container.container-half .image-container,
+.section-container.container-half .description-container{
+  flex: 0 0 50%;
+}
+.section-container.container-half .description-content{
+  max-width: 980px;
+}
+.section-container.container-half .section-title{
+  padding-top: 0;
+}
+.description-content{
+  padding: 20px 50px;
+}
+.description-container.centered-text{
+  text-align: center;
+}
+.image-gallery-container{
+  background-color: #faf7f1;
+  padding: 161px 80px;
+}
+.image-gallery-container,
+.image-gallery{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.image-gallery{
+  width: calc(50% - 3px);
+}
+.image-gallery li{
+  width: calc(50% - 3px);
+  margin-bottom: 6px;
+}
+.social-link-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-link-list li{
+  width: 40px;
+}
+.banner-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../images/last-banner-image.jpg');
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: 4px;
+  text-align: center;
+  height: 240px;
+  font-size: 20px;
+  padding: 17% 0 17%;
+}
+.banner-bottom h2{
+  font-family: "Times New Roman", Times, serif;
+  color: #fff;
+  font-weight: bold;
+}
+.social-links-container{
+  padding: 151px 0 58px;
+}
+.social-link-list li{
+  margin: 0 40px;
+  width: 100px;
+}
+.footer{
+  background-color: #e4e3df;
+  padding: 66px 0 37px;
+}
+.footer p{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
