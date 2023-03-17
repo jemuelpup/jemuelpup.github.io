@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.7f07bef4.css",
-    "main.js": "./static/js/main.9433429a.js",
+    "main.css": "./static/css/main.96f90308.css",
+    "main.js": "./static/js/main.ed691272.js",
     "static/media/login-elements-bg.svg": "./static/media/login-elements-bg.c0ff50b0223a98d434f5.svg",
     "static/media/logo.svg": "./static/media/logo.abb687ec703cfd9e573a5ababb39c55c.svg",
     "static/media/login-form-bg.svg": "./static/media/login-form-bg.74fbe609ade42564aa4b.svg",
@@ -9,9 +9,9 @@
     "static/media/ic_logo.svg": "./static/media/ic_logo.cd7024f8b5c74975999f561f250cbd45.svg",
     "static/media/ic_team.svg": "./static/media/ic_team.0cf1f461550bd7760990787a9cfd8766.svg",
     "static/media/ic_change.svg": "./static/media/ic_change.579c32f6a8dfeb6502f75f4019fc9f1c.svg",
+    "index.html": "./index.html",
     "static/media/ic_chat.svg": "./static/media/ic_chat.862e28c8df7bfedb47e237d68289a27c.svg",
     "static/media/ic_color_selection.svg": "./static/media/ic_color_selection.31a561f5a21d740e9638dfb3ef1640bf.svg",
-    "index.html": "./index.html",
     "static/media/ic_idea.svg": "./static/media/ic_idea.86dd9b95e9925e571fea5c504776fa33.svg",
     "static/media/ic_training.svg": "./static/media/ic_training.904052dfac1e20c6b93a8600a7c290dc.svg",
     "static/media/ic_user.svg": "./static/media/ic_user.0aa61d560af4689b91de88ec3ef84374.svg",
@@ -24,11 +24,11 @@
     "static/media/ic_submit.svg": "./static/media/ic_submit.1606599318474f57151e6e1f708333a9.svg",
     "static/media/ic_dashboard.svg": "./static/media/ic_dashboard.b133d41c65528eca5e292940e957951a.svg",
     "static/media/ic_sort.svg": "./static/media/ic_sort.bedeb0e529dc7a421c24ddd5f3e42d14.svg",
-    "main.7f07bef4.css.map": "./static/css/main.7f07bef4.css.map",
-    "main.9433429a.js.map": "./static/js/main.9433429a.js.map"
+    "main.96f90308.css.map": "./static/css/main.96f90308.css.map",
+    "main.ed691272.js.map": "./static/js/main.ed691272.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f07bef4.css",
-    "static/js/main.9433429a.js"
+    "static/css/main.96f90308.css",
+    "static/js/main.ed691272.js"
   ]
 }
