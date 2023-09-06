@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.ad1ffeca.css",
-    "main.js": "./static/js/main.23af5336.js",
+    "main.css": "./static/css/main.1ceb9bb6.css",
+    "main.js": "./static/js/main.0e184af8.js",
     "static/media/login-elements-bg.svg": "./static/media/login-elements-bg.c0ff50b0223a98d434f5.svg",
     "static/media/login-form-bg.svg": "./static/media/login-form-bg.74fbe609ade42564aa4b.svg",
     "static/media/ic_user_settings.svg": "./static/media/ic_user_settings.63e896f87a4595e97dc15bedfa5e52ee.svg",
@@ -30,11 +30,11 @@
     "static/media/ic_result.svg": "./static/media/ic_result.130eba81eba98db0f73e60617eb99777.svg",
     "static/media/ic_submit.svg": "./static/media/ic_submit.1606599318474f57151e6e1f708333a9.svg",
     "static/media/ic_dashboard.svg": "./static/media/ic_dashboard.b133d41c65528eca5e292940e957951a.svg",
-    "main.ad1ffeca.css.map": "./static/css/main.ad1ffeca.css.map",
-    "main.23af5336.js.map": "./static/js/main.23af5336.js.map"
+    "main.1ceb9bb6.css.map": "./static/css/main.1ceb9bb6.css.map",
+    "main.0e184af8.js.map": "./static/js/main.0e184af8.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad1ffeca.css",
-    "static/js/main.23af5336.js"
+    "static/css/main.1ceb9bb6.css",
+    "static/js/main.0e184af8.js"
   ]
 }
